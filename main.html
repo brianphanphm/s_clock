@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng hồ điện tử</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dong_ho">
+        <h2>Thời gian bây giờ là:</h2>
+        <div class="thoi_gian">
+            <div>
+                <span id="gio">00</span><span>Giờ</span>
+            </div>
+            <div>
+                <span id="phut">00</span><span>Phút</span>
+            </div>
+            <div>
+                <span id="giay">00</span><span>Giây</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    function dong_ho() {
+        var gio = document.getElementById("gio")
+        var phut = document.getElementById("phut")
+        var giay = document.getElementById("giay")
+        var gio_hien_tại = new Date().getHours()
+        var phut_hien_tai = new Date().getMinutes()
+        var giay_hien_tai = new Date().getSeconds()
+        gio.innerHTML = gio_hien_tại
+        phut.innerHTML = phut_hien_tai
+        giay.innerHTML = giay_hien_tai
+    }
+
+    var dem_gio = setInterval(dong_ho, 1000)
+
+</script>
+</html>
